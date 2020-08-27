@@ -1,0 +1,6 @@
+{% load static %}
+<ul>
+    <li><a class="links menu-links {% if request.resolver_match.url_name == 'blog' %}
+                    menu-link-active
+                    {% endif %}" href="#">Блог</a></li>
+</ul>

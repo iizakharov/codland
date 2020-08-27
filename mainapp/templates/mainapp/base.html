@@ -1,0 +1,55 @@
+<html lang="ru">
+<head>
+{% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+	{% block title %}
+    <title>
+		CodLand | {{ title|default:"страница"|title }}
+    </title>
+	{% endblock %}
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	{% endblock %}
+
+    {% block js %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        {% block menu %}
+        <div class="header-block">
+            <div class="header-menu">
+                <div class="logo">
+                    <img class="logo-img" src="{% static 'img/logo.svg' %}" alt="logo">
+                </div>
+                <div class="menu">
+                    {% include 'mainapp/includes/inc_menu.html' %}
+                </div>
+                <div class="add-article">
+                    <button class="add-article-btn"><span>+&nbsp;Добавить&nbsp;статью</span></button>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% block footer %}
+        <div class="footer">
+            <div class="footer-body">
+            </div>
+            <div class="footer-flor">
+               <p>&copy; Copyright - 2020. CodLand Все права защищены.</p>
+            </div>
+
+        </div>
+		{% endblock %}
+	</div>
+</body>
+</html>

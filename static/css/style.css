@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Circe Rounded';
+    src: url("../fonts/CirceRounded-Regular.woff");
+}
+
+@font-face {
+    font-family: 'Circe Rounded4';
+    src: url("../fonts/CirceRounded-Regular4.woff");
+}
+
+@font-face {
+    font-family: 'Museo Cyrl';
+    src: url("../fonts/MuseoCyrl700.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #E5E5E5;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+.header-block {
+    border-bottom: 2px solid #CDCDCD;
+}
+
+.header-menu {
+    display: flex;
+    max-width: 1440px;
+    height: 80px;
+    /* background: #FFFFFF; */
+}
+
+.logo {
+     padding: 1px 0 7px 90px;
+}
+
+.logo-img {
+    width: 189.26px;
+    height: 72px;
+}
+
+.menu {
+    width: 46px;
+    height: 28px;
+    padding: 28px 0 26px 20px;
+}
+
+.menu ul{
+    list-style-type: none;
+}
+
+.links {
+    text-decoration: none;
+    font-family: Circe Rounded4;
+    font-size: 22px;
+    line-height: 26px;
+    color: #010101;
+}
+
+.add-article {
+    padding: 24px 0 24px 0;
+    position: absolute;
+    right: 120px;
+}
+
+
+.add-article-btn {
+    display: flex;
+    flex-direction: row;
+    padding: 6px 16px;
+    width: 166px;
+    height: 32px;
+    background: #315AF2;
+    border-radius: 6px;
+    border: none;
+}
+
+.add-article-btn:hover{
+    box-shadow: 0 0 5px 1px rgba(33, 33, 33, 0.35);
+    position: relative;
+}
+
+.add-article-btn:focus{
+    outline: none;
+}
+
+.add-article-btn:active{
+    box-shadow: 0 0 5px 1px rgba(33, 33, 33, 0.35);
+    position: relative;
+    top: 2px;
+    border: none;
+}
+
+.add-article-btn span{
+    font-family: Circe Rounded;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.block-new {
+    padding: 40px 120px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #CDCDCD;
+}
+
+.new {
+    font-family: Circe Rounded4;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.416667px;
+    color: #E9399C;
+}
+.new-article-img {
+    width: 464px;
+    height: 422px;
+}
+
+.block-new-article {
+    max-width: 672px;
+}
+
+.block-new-article h1{
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 128%;
+    letter-spacing: -0.416667px;
+    color: #315AF2;
+}
+
+.block-new-article p {
+    font-family: Circe Rounded;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 136%;
+    letter-spacing: -0.416667px;
+    color: #000000;
+    width: 391px;
+    padding: 15px 0;
+}
+
+.block-new-article button {
+    width: 150px;
+    height: 58px;
+    background: #315AF2;
+    border-radius: 6px;
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.416667px;
+    color: #FFFFFF;
+    border: none;
+}
+
+.block-new-article button:hover{
+    box-shadow: 0 0 5px 1px rgba(33, 33, 33, 0.35);
+    position: relative;
+
+}
+
+.block-new-article button:focus{
+    outline: none;
+
+}
+
+.block-new-article button:active{
+    box-shadow: 0 0 5px 1px rgba(33, 33, 33, 0.35);
+    position: relative;
+    top: 2px;
+    border: none;
+}
+
+.block-articles {
+    padding: 30px 120px;
+    border-bottom: 2px solid #CDCDCD;
+}
+
+.block-articles h1{
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.416667px;
+    color: #315AF2;
+    padding: 30px 0;
+}
+
+.article-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.article {
+    border: 2px solid #CDCDCD;
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 335px;
+    height: 300px;
+    margin-bottom: 32px;
+}
+
+.article p{
+    padding: 20px 0 0 20px;
+    font-family: Circe Rounded;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -0.416667px;
+    color: #979797;
+}
+
+.article div{
+    text-align: center;
+}
+
+.article img {
+    width: 217px;
+    height: 112px;
+}
+
+.article h2{
+    width: 248px;
+    height: 87px;
+    font-family: Circe Rounded;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.416667px;
+    color: #315AF2;
+    padding: 30px 42px;
+    text-align: center;
+}
+
+.footer {
+    padding: 20px;
+}
