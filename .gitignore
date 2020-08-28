@@ -6,6 +6,7 @@
 
 # Text backup files
 *.bak
+*.baki
 
 #Database
 *.sqlite3
