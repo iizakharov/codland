@@ -35,26 +35,6 @@ def article(request, pk):
     return render(request, 'mainapp/article.html', context)
 
 
-# class AddArticle(View):
-#     """Add Article"""
-#     model = Article
-    # fields = []
-    # form_class = ArticleForm
-    # # success_url = reverse_lazy('ordersapp:index')
-    #
-    # def get_context_data(self, **kwargs):
-    #     # form = ArticleForm(self.request.POST, self.request.FILES)
-    #
-    #     if self.request.POST:
-    #         form = ArticleForm(self.request.POST, self.request.FILES)
-    #
-    # def post(self, request):
-    #     form = ArticleForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #
-    #     return redirect("/")
-
 def add_article(request):
     form = ArticleForm(request.POST, request.FILES)
 

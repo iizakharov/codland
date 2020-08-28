@@ -2,3 +2,10 @@
 *.xml
 *.pyc
 *.iml
+
+
+# Text backup files
+*.bak
+
+#Database
+*.sqlite3

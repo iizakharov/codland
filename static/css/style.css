@@ -28,6 +28,10 @@ body {
     background: #FFFFFF;
 }
 
+.content {
+    padding-bottom: 50px;
+}
+
 .header-block {
     border-bottom: 2px solid #CDCDCD;
 }
@@ -325,8 +329,8 @@ body {
     justify-content: space-between;
 }
 .form-right input{
-    max-width: 880px;
-    min-width: 400px;
+    width: 880px;
+    /* min-width: 400px; */
     height: 48px;
     margin-bottom: 33px;
     padding-left: 16px;
