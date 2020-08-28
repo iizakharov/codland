@@ -1,0 +1,32 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="article-form-add">
+        <h1>Добавить статью</h1>
+        <div class="article-form">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form">
+                <div class="form-right">
+                    <input required id="name" name="name" type="text" placeholder="Введите название статьи">
+                    <textarea required id="surname" name="description" type="text"></textarea>
+
+                   <!--{{ form.as_p }}-->
+                </div>
+                <div class="form-left">
+                    <input type="submit" value="Опубликовать" class="btn-save">
+                    <div class="btn-upload">
+                        <p>Загрузить изображение</p>
+                        <div class="upload-photo">
+                            <label for="upload-photo">Фаил</label>
+                            <input type="file" name="image" id="upload-photo" />
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

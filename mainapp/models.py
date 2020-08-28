@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 class Article(models.Model):
     class Meta:
@@ -13,8 +13,8 @@ class Article(models.Model):
                                    blank=True)
     image = models.ImageField(upload_to='article_images',
                               verbose_name='иллюстрация', blank=True)
-    # sort_description = models.TextField(verbose_name='краткий текст статьи',
-    #                                     blank=True, max_length=90)
+    sort_description = models.TextField(verbose_name='краткий текст статьи',
+                                        blank=True, max_length=190)
     created = models.DateTimeField(verbose_name='создан', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='обновлен', auto_now=True)
     is_active = models.BooleanField(verbose_name='статья активна',
@@ -23,8 +23,11 @@ class Article(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        short = self.description
-        self.sort_description = short[:60]
 
-        super().save(*args, **kwargs)
+class NewArt(models.Model):
+    name = models.CharField(verbose_name='заголовок', max_length=64,
+                            unique=True)
+    content = RichTextField()
+
+    def __str__(self):
+        return self.name

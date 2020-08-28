@@ -25,30 +25,31 @@
         <div class="header-block">
             <div class="header-menu">
                 <div class="logo">
-                    <img class="logo-img" src="{% static 'img/logo.svg' %}" alt="logo">
+                    <a href="{% url 'main:index' %}"><img class="logo-img" src="{% static 'img/logo.svg' %}" alt="logo"></a>
                 </div>
                 <div class="menu">
                     {% include 'mainapp/includes/inc_menu.html' %}
                 </div>
                 <div class="add-article">
-                    <button class="add-article-btn"><span>+&nbsp;Добавить&nbsp;статью</span></button>
+                    <button class="add-article-btn"><a href="{% url 'main:add_article' %}"><span>+&nbspДобавить&nbsp;статью</span></a></button>
                 </div>
             </div>
         </div>
         {% endblock %}
-
-        {% block content %}
-        {% endblock %}
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
 
         {% block footer %}
-        <div class="footer">
-            <div class="footer-body">
-            </div>
-            <div class="footer-flor">
-               <p>&copy; Copyright - 2020. CodLand Все права защищены.</p>
-            </div>
+        <!--<div class="footer">-->
+            <!--<div class="footer-body">-->
+            <!--</div>-->
+            <!--<div class="footer-flor">-->
+               <!--<p>&copy; Copyright - 2020. CodLand Все права защищены.</p>-->
+            <!--</div>-->
 
-        </div>
+        <!--</div>-->
 		{% endblock %}
 	</div>
 </body>

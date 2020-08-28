@@ -2,53 +2,31 @@
 {% load static %}
 
 {% block content %}
-<div class="content">
-    <div class="block-new">
-        <div class="block-new-article">
-            <div class="new">NEW</div>
-            <h1>Почему подросткам стоит изучать программирование?</h1>
-            <p>Объясняем почему словосочетание «программирование для подростков» не должно вызывать скептическую улыбку
-                и какие полезные навыки приобретают ребята, изучая программирование.</p>
-            <button type="button">Читать</button>
-        </div>
-        <div>
-            <img class="new-article-img" src="{% static 'img/img.png' %}" alt="article img">
-        </div>
+<div class="block-new">
+    {% for article in last_article %}
+    <div class="block-new-article">
+        <div class="new">NEW</div>
+        <h1>{{ article.name }}</h1>
+        <p>{{ article.sort_description }}</p>
+        <button type="button"><a href="{% url 'main:article' article.pk %}">Читать</a></button>
     </div>
-    <div class="block-articles">
-        <h1>Другие статьи</h1>
-        <div class="article-list">
-            <div class="article">
-                <p class="pub-date">27 августа 2020 18:55</p>
-                <div><img src="{% static 'img/img2.png' %}" alt="article img"></div>
-                <h2>Как программирование  развивает привычные  отрасли?</h2>
-            </div>
-            <div class="article">
-                <p class="pub-date">27 августа 2020 18:55</p>
-                <div><img src="{% static 'img/img2.png' %}" alt="article img"></div>
-                <h2>Как программирование  развивает привычные  отрасли?</h2>
-            </div>
-            <div class="article">
-                <p class="pub-date">27 августа 2020 18:55</p>
-                <div><img src="{% static 'img/img2.png' %}" alt="article img"></div>
-                <h2>Как программирование  развивает привычные  отрасли?</h2>
-            </div>
-            <div class="article">
-                <p class="pub-date">27 августа 2020 18:55</p>
-                <div><img src="{% static 'img/img2.png' %}" alt="article img"></div>
-                <h2>Как программирование  развивает привычные  отрасли?</h2>
-            </div>
-            <div class="article">
-                <p class="pub-date">27 августа 2020 18:55</p>
-                <div><img src="{% static 'img/img2.png' %}" alt="article img"></div>
-                <h2>Как программирование  развивает привычные  отрасли?</h2>
-            </div>
-            <div class="article">
-                <p class="pub-date">27 августа 2020 18:55</p>
-                <div><img src="{% static 'img/img2.png' %}" alt="article img"></div>
-                <h2>Как программирование  развивает привычные  отрасли?</h2>
-            </div>
-        </div>
+    <div>
+        <img class="new-article-img" src="{{ article.image.url }}" alt="article img">
+    </div>
+    {% endfor %}
+</div>
+<div class="block-articles">
+    <h1>Другие статьи</h1>
+    <div class="article-list">
+        {% for article in articles %}
+            <a href="{% url 'main:article' article.pk %}">
+                <div class="article">
+                    <p class="pub-date">{{ article.created }}</p>
+                    <div><img src="{{ article.image.url }}" alt="article img"></div>
+                    <h2>{{ article.name }}</h2>
+                </div>
+             </a>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

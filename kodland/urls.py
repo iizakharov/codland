@@ -22,6 +22,7 @@ from kodland import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('mainapp.urls', namespace='main')),
 ]
 
