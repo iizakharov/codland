@@ -40,7 +40,7 @@ def add_article(request):
 
     if request.method == "POST" and form.is_valid():
         name = request.POST['name']
-        description = request.POST['description']
+        description = request.POST['description1']
         image = request.FILES['image']
 
         Article.objects.create(name=name,

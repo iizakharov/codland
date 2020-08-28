@@ -7,20 +7,28 @@
         <div class="article-form">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
+                {{ form.media }}
+
                 <div class="form">
                 <div class="form-right">
                     <input required id="name" name="name" type="text" placeholder="Введите название статьи">
-                    <textarea required id="surname" name="description" type="text"></textarea>
-
-                   <!--{{ form.as_p }}-->
+                    {{ form }}
+<!--                    <textarea required id="surname" name="description" type="text"></textarea>-->
                 </div>
                 <div class="form-left">
                     <input type="submit" value="Опубликовать" class="btn-save">
                     <div class="btn-upload">
-                        <p>Загрузить изображение</p>
-                        <div class="upload-photo">
-                            <label for="upload-photo">Фаил</label>
-                            <input type="file" name="image" id="upload-photo" />
+                        <div class="upload-div-img invisible">
+                            <img class="up-img" src="">
+                            <input type="button" id="close" value="x">
+                        </div>
+                        <div class="upload-div">
+                            <p>Загрузить изображение</p>
+                            <div class="upload-photo">
+                                <label for="upload-photo">Фаил</label>
+                                <input class="input-upload" type="file" name="image" id="upload-photo" onchange="previewFile()" />
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -28,5 +36,32 @@
             </form>
         </div>
     </div>
+<script>
+function previewFile() {
+  let preview = document.querySelector('.up-img');
+  let file    = document.querySelector('.input-upload').files[0];
+  let reader  = new FileReader();
 
+  reader.onloadend = function () {
+    document.querySelector('.upload-div').classList.add('invisible');
+    document.querySelector('.upload-div-img').classList.remove('invisible');
+    preview.src = reader.result;
+  }
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = "";
+  }
+}
+
+
+document.getElementById('close').onclick = function() {
+    let preview = document.querySelector('.up-img');
+    preview.src = "";
+    document.querySelector('.upload-div').classList.remove('invisible');
+    document.querySelector('.upload-div-img').classList.add('invisible');
+}
+
+</script>
 {% endblock %}

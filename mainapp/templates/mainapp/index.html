@@ -7,7 +7,7 @@
     <div class="block-new-article">
         <div class="new">NEW</div>
         <h1>{{ article.name }}</h1>
-        <p>{{ article.sort_description }}</p>
+        <p>{{ article.sort_description | safe }}</p>
         <button type="button"><a href="{% url 'main:article' article.pk %}">Читать</a></button>
     </div>
     <div>
