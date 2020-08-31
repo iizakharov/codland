@@ -13,7 +13,8 @@ class Article(models.Model):
     name = models.CharField(verbose_name='заголовок', max_length=64)
     description = models.TextField(verbose_name='полный текст статьи',
                                    blank=True)
-    description1 = RichTextUploadingField(blank=True, null=True)
+    description1 = RichTextUploadingField(verbose_name='полный текст статьи',
+                                          blank=True, null=True)
     image = models.ImageField(upload_to='article_images',
                               verbose_name='иллюстрация', blank=True)
     sort_description = models.TextField(verbose_name='краткий текст статьи',

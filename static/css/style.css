@@ -442,9 +442,12 @@ body {
 }
 
 .upload-photo label{
-    position: absolute;
+    /*position: absolute;
     right: 55px;
-    top: 13px;
+    top: 13px;*/
+    position: absolute;
+    right: 0;
+    margin: 14px 54px;
 }
 
 #upload-photo {

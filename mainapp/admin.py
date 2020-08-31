@@ -7,7 +7,8 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
 class NewArtAdminForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditorUploadingWidget())
+    description = forms.CharField(label="Описание",
+                                  widget=CKEditorUploadingWidget())
 
     class Meta:
         model = NewArt
